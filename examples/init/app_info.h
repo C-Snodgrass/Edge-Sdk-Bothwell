@@ -22,10 +22,10 @@
 #ifndef __APP_INFO_H__
 #define __APP_INFO_H__
 
-#define USER_APP_NAME "your_app_name"
-#define USER_APP_ID "your_app_id"
-#define USER_APP_KEY "your_app_key"
-#define USER_APP_LICENSE "your_app_license"
-#define USER_DEVELOPER_ACCOUNT "your_developer_account"
+#define USER_APP_NAME "EdgeSDKOnFarm"
+#define USER_APP_ID "151542"
+#define USER_APP_KEY "a87f2e2937e8cb72c798d99c7683d5e"
+#define USER_APP_LICENSE "WU3EzRc6XJWbEHOlr0B8rt4Slnk5VC4naxbUHEi/7nGeDJy1E7x3hjuycjo2WJAPZqfnmgS5N72h2GfYnmx/cfUum2aceGPmC0rcf6JQwbD2KRIwaAb/TyUqgcxSUYzu5ECRIvKpgDlrAFKqOywGl4uY2bDVrmZTdsajYtcfQ3eO5YxjWEUmwR63bTmCZ8j/Ri/3cgdJRbwpbTurtErqo75f5TXxiT2m7XJklFC5NpPj7hlTpWJr9hHDW5hvZHVdVMAFj2IQhSm/BAkktjRTR9HpLl3lBYmvekFfl8dGXBY9+C+M6nbnLWJiMv7EJn4I+9Ks7TemAasqkXkIRo0baw=="
+#define USER_DEVELOPER_ACCOUNT "deans3@utas.edu.au"
 
 #endif

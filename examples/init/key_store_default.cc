@@ -33,8 +33,11 @@ namespace {
 uint8_t buffer[1500];
 std::shared_ptr<std::string> rsa2048_public_key_;
 std::shared_ptr<std::string> rsa2048_private_key_;
-const char* kPathPublickKey = "/tmp/pub_key";
-const char* kPathPrivateKey = "/tmp/private_key";
+// Generate some keys and change this path maybe change to ./keys ...??
+const char* kPathPublicKey ="/home/nolan/Edge-SDK/examples/init/keys/pub_key"; 
+//const char* kPathPublicKey ="/tmp/pub_key"; 
+const char* kPathPrivateKey = "/home/nolan/Edge-SDK/examples/init/keys/private_key:";
+//const char* kPathPrivateKey = "/tmp/pub_key";
 }  // namespace
 
 KeyStoreDefault::KeyStoreDefault() {
@@ -65,7 +68,7 @@ ErrorCode KeyStoreDefault::RSA2048_GetDERPublicKey(
 
 bool KeyStoreDefault::ReadKeys() {
     uint32_t len = 0;
-    FILE* file = fopen(kPathPublickKey, "rb");
+    FILE* file = fopen(kPathPublicKey, "rb");
     if (file) {
         auto ret = fread(buffer, 1, sizeof(buffer), file);
         if (ret > 0) {
@@ -103,7 +106,7 @@ bool KeyStoreDefault::GenerateKeys() {
     }
     rsa2048_public_key_ = std::make_shared<std::string>((char*)buffer, key_len);
 
-    FILE* pkey = fopen(kPathPublickKey, "wb");
+    FILE* pkey = fopen(kPathPublicKey, "wb");
     if (pkey) {
         fwrite(buffer, 1, key_len, pkey);
         fclose(pkey);

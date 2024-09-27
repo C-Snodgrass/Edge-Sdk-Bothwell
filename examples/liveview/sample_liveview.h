@@ -22,6 +22,7 @@
 #ifndef __SAMPLE_LIVEVIEW_H__
 #define __SAMPLE_LIVEVIEW_H__
 
+// include other  modules
 #include <chrono>
 #include <atomic>
 #include "error_code.h"

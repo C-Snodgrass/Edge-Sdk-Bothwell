@@ -34,9 +34,9 @@ uint8_t buffer[1500];
 std::shared_ptr<std::string> rsa2048_public_key_;
 std::shared_ptr<std::string> rsa2048_private_key_;
 // Generate some keys and change this path maybe change to ./keys ...??
-const char* kPathPublicKey ="/home/nolan/Edge-SDK/examples/init/keys/pub_key"; 
+const char* kPathPublicKey ="/home/nolan/keys/pub_key"; 
 //const char* kPathPublicKey ="/tmp/pub_key"; 
-const char* kPathPrivateKey = "/home/nolan/Edge-SDK/examples/init/keys/private_key:";
+const char* kPathPrivateKey = "/home/nolan/keys/private_key:";
 //const char* kPathPrivateKey = "/tmp/pub_key";
 }  // namespace
 

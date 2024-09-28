@@ -8,18 +8,22 @@ fi
 
 # Define input and output paths
 INPUT_VIDEO="/home/nolan/Downloads/Dron_Test_&_US.MP4"
-OUTPUT_HLS="/var/www/hls/high/high.m3u8"
+OUTPUT_DIR="/var/www/hls"
 
-# Run ffmpeg command
+# Clean up old files
+echo "Cleaning up old high-quality stream files..."
+rm -f $OUTPUT_DIR/high/*.ts $OUTPUT_DIR/high/*.m3u8
+
+# Run ffmpeg command for high-quality stream
 ffmpeg -re -stream_loop -1 -i "$INPUT_VIDEO" \
-    -c:v libx264 -b:v 5000k -s 1920x1080 \
-    -c:a aac -f hls -hls_time 5 \
-    -hls_playlist_type event -hls_flags delete_segments "$OUTPUT_HLS"
+    -c:v libx264 -b:v 2800k -s 1280:720 \
+    -c:a aac -b:a 128k -f hls -hls_time 5 \
+    -hls_playlist_type event -hls_flags delete_segments \
+    "$OUTPUT_DIR/high/high.m3u8"
 
 # Check if ffmpeg command was successful
 if [ $? -eq 0 ]; then
-    echo "Streaming started successfully."
+    echo "High-quality streaming started successfully."
 else
-    echo "Error occurred while starting the stream."
+    echo "Error occurred while starting the high-quality stream."
 fi
-

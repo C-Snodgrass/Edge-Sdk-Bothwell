@@ -7,8 +7,9 @@ if ! command -v ffmpeg &> /dev/null; then
 fi
 
 # Define input and output paths
-INPUT_VIDEO="/home/nolan/Downloads/Dron_Test_&_US.MP4"
-OUTPUT_DIR="/var/www/hls/program_1"
+
+INPUT_VIDEO="/home/nolan/Downloads/student.mp4"
+OUTPUT_DIR="/var/www/hls/program_2"
 
 # Clean up old files
 echo "Cleaning up old stream files..."
@@ -23,7 +24,7 @@ ffmpeg -re -stream_loop -1 -i "$INPUT_VIDEO" \
 
 # Check if ffmpeg command was successful
 if [ $? -eq 0 ]; then
-    echo "Low-quality streaming started successfully."
+    echo "OCV Low-quality streaming started successfully."
 else
-    echo "Error occurred while starting the low-quality stream."
+    echo "Error occurred while starting the OCV low-quality stream."
 fi

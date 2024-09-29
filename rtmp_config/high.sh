@@ -8,11 +8,11 @@ fi
 
 # Define input and output paths
 INPUT_VIDEO="/home/nolan/Downloads/Dron_Test_&_US.MP4"
-OUTPUT_DIR="/var/www/hls/program_1/"
+OUTPUT_DIR="/home/nolan/hls/program1"
 
-# Clean up old files
+# Clean up old high-quality stream files, keeping the directory intact
 echo "Cleaning up old high-quality stream files..."
-rm -f $OUTPUT_DIR/high/high*.ts $OUTPUT_DIR/high/high*.m3u8
+rm -f "$OUTPUT_DIR/high/*"
 
 # Run ffmpeg command for high-quality stream
 ffmpeg -re -stream_loop -1 -i "$INPUT_VIDEO" \
@@ -27,3 +27,4 @@ if [ $? -eq 0 ]; then
 else
     echo "Error occurred while starting the high-quality stream."
 fi
+

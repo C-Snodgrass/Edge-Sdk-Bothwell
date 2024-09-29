@@ -8,7 +8,7 @@ fi
 
 # Define input and output paths
 INPUT_VIDEO="/home/nolan/Downloads/Dron_Test_&_US.MP4"
-OUTPUT_DIR="/var/www/hls/program_1"
+OUTPUT_DIR="/home/nolan/hls/program1"
 
 # Clean up old files
 echo "Cleaning up old stream files..."

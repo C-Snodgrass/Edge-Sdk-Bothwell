@@ -168,6 +168,7 @@ void ImageProcessorYolovFastest::Process(const std::shared_ptr<Image> image) {
         post_process(frame, outs);
         draw_fps(frame);
 
+    // TODO: this displays the frames of the video ... maybe modify this or somehting ???
         imshow(show_name_.c_str(), frame);
         cv::waitKey(1);
     };
